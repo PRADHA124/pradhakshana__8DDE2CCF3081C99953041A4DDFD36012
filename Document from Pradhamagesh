@@ -1,24 +1,15 @@
-class Student:
-    def __init__(self, name, roll_number, cgpa):
-        self.name = name
-        self.roll_number = roll_number
-        self.cgpa = cgpa
-def sort_students(student_list):
-    sorted_students = sorted(student_list, key=lambda student: student.cgpa, reverse=True)
-    return sorted_students
+def linear_search_product(product_list, target_product_name):
+    indices = []
+    for index, product in enumerate(product_list):
+        if product== target_product_name:
+            indices.append(index)
+    return indices
+# Sample list of products (list of dictionaries)
+products = ["Laptop","Tablet","Phone","Smart watch"]
 
+target_product_name = "Laptop"
 
-# Sample list of student objects
-students = [
-    Student("Alice", "A101", 3.8),
-    Student("Bob", "B102", 3.9),
-    Student("Charlie", "C103", 3.7),
-    Student("David", "D104", 3.95),
-]
+# Call the linear_search_product function
+result= linear_search_product(products, target_product_name)
 
-# Sort the students by CGPA
-sorted_students = sort_students(students)
-
-# Print the sorted list of students
-for student in sorted_students:
-    print(f"Name: {student.name}, Roll Number: {student.roll_number}, CGPA: {student.cgpa}")
+print(result)
